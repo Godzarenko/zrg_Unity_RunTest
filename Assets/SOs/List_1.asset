@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomizedLvls: 0
   lvls:
-  - {fileID: 708528609897955476, guid: bd817d321e3e6974da94647761a8652c, type: 3}
-  - {fileID: 5340035569521633790, guid: edbebfec626f62e42b96ef41b95366ef, type: 3}
-  - {fileID: 4582760263746729034, guid: 082dc33192f2be74ab7e1493ec0a2f92, type: 3}
+  - {fileID: 5439593368188839649, guid: 3e0b820a8e7ee9e4ab7370bc092009ed, type: 3}
+  - {fileID: 5439593368188839649, guid: 3e0b820a8e7ee9e4ab7370bc092009ed, type: 3}
+  - {fileID: 5439593368188839649, guid: 3e0b820a8e7ee9e4ab7370bc092009ed, type: 3}
   - {fileID: 6988186414370947553, guid: 93f929945a8e9e44d904a014098156e1, type: 3}
