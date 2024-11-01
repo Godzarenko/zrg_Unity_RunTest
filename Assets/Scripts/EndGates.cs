@@ -9,6 +9,7 @@ public class EndGates : MonoBehaviour
     [SerializeField] Animator Anmtr;
     bool triggered = false;
     [SerializeField] string TriggerSound;
+    [SerializeField] string WinSound;
     private void OnTriggerEnter(Collider other)
     {
         if (!triggered)
@@ -21,12 +22,13 @@ public class EndGates : MonoBehaviour
                 {
                     Anmtr.SetBool("open", true);
                     LevelManager.Instance.SetCurrentMultiplier(Multiplier);
-                    SoundsManager.CreateSoundOnCamera(TriggerSound, 2, true);
+                    SoundsManager.CreateSoundOnCamera(TriggerSound, 4, true);
                 }
                 else
                 {
                     //end level
                     LevelManager.Instance.SignalGameEnd(true, plrLevel);
+                    SoundsManager.CreateSoundOnCamera(WinSound, 10, true);
                 }
             }
         }

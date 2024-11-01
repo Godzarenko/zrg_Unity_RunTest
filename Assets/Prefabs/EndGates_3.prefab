@@ -960,3 +960,4 @@ MonoBehaviour:
   Multiplier: 1.5
   Anmtr: {fileID: 8296190560478875145}
   TriggerSound: main:door2
+  WinSound: main:win

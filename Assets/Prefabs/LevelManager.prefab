@@ -1,0 +1,157 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8074735547342901238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5500820344909917979}
+  - component: {fileID: 1033453466905941552}
+  - component: {fileID: 1749813252472721860}
+  - component: {fileID: 7642211242640572229}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5500820344909917979
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8074735547342901238}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1033453466905941552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8074735547342901238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbfaa58de9e9c914d92828e820794f82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentLevelIndex: 0
+  editorMode: 0
+  levels: {fileID: 11400000, guid: 3ad1b5469688f6c43b0ef769bf22d832, type: 2}
+--- !u!114 &1749813252472721860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8074735547342901238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17d30064a98358c4f9607f4eb203cdbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Mixers:
+  - {fileID: 24300002, guid: f4ec11056396a2f4a80ea96283b7b2c0, type: 2}
+  Groups:
+  - Name: main
+    Banks:
+    - Name: ough
+      Clips:
+      - Clip: {fileID: 8300000, guid: 4a26fdac4ac5b664192865752483056a, type: 3}
+        ClipVolume: 1
+        BasePitch: 1
+        PitchRandom: 0.1
+    - Name: coin
+      Clips:
+      - Clip: {fileID: 8300000, guid: 2e5ea3ece9b498b45bee324e58e12385, type: 3}
+        ClipVolume: 1
+        BasePitch: 1
+        PitchRandom: 0.1
+    - Name: flag
+      Clips:
+      - Clip: {fileID: 8300000, guid: 7d87a8a079a18784391b9190e8c18a96, type: 3}
+        ClipVolume: 1
+        BasePitch: 1
+        PitchRandom: 0.3
+    - Name: door1
+      Clips:
+      - Clip: {fileID: 8300000, guid: f2dfb1c740ef70e4f9861497274cb506, type: 3}
+        ClipVolume: 1
+        BasePitch: 1
+        PitchRandom: 0.3
+    - Name: door2
+      Clips:
+      - Clip: {fileID: 8300000, guid: 2bae95e86cfada244ab131615d1d46f9, type: 3}
+        ClipVolume: 1
+        BasePitch: 1
+        PitchRandom: 0.3
+    - Name: door3
+      Clips:
+      - Clip: {fileID: 8300000, guid: f167b321dd5aab943a24e277c59f34aa, type: 3}
+        ClipVolume: 1
+        BasePitch: 1
+        PitchRandom: 0.3
+    - Name: door4
+      Clips:
+      - Clip: {fileID: 8300000, guid: 5fb2cf52120bd3b4984e3b1c7c32e5e4, type: 3}
+        ClipVolume: 1
+        BasePitch: 1
+        PitchRandom: 0.3
+    - Name: step
+      Clips:
+      - Clip: {fileID: 8300000, guid: cb6c4a75fffa6e849a0aaf217e5e5566, type: 3}
+        ClipVolume: 1
+        BasePitch: 1
+        PitchRandom: 0.3
+      - Clip: {fileID: 8300000, guid: 85d4c3bac2dc2094c9024268db0b515d, type: 3}
+        ClipVolume: 1
+        BasePitch: 1
+        PitchRandom: 0.3
+      - Clip: {fileID: 8300000, guid: 144d68975ae7c284ab07ba4390cef206, type: 3}
+        ClipVolume: 1
+        BasePitch: 1
+        PitchRandom: 0.3
+    - Name: step_heel
+      Clips:
+      - Clip: {fileID: 8300000, guid: 237dc607445534140807ed3e374ea9fc, type: 3}
+        ClipVolume: 1
+        BasePitch: 1
+        PitchRandom: 0.3
+      - Clip: {fileID: 8300000, guid: e3c1c215653cbe14e9ebb58e43e342ed, type: 3}
+        ClipVolume: 1
+        BasePitch: 1
+        PitchRandom: 0.3
+    - Name: win
+      Clips:
+      - Clip: {fileID: 8300000, guid: 06ec0164c9f624646823e54260232d3d, type: 3}
+        ClipVolume: 1
+        BasePitch: 1
+        PitchRandom: 0.3
+  worldEmitterPrefab: {fileID: 1210017034564191026, guid: c32b5c551a673bd408fc3b46b1944233, type: 3}
+  uiEmitterPrefab: {fileID: 3061809693982232430, guid: 483ba88aedb31c54cb3046fdbfc00736, type: 3}
+  globalMusicModifier: 0.2
+  SoundVol: 0.6
+  SoundMaxGain: 1
+--- !u!114 &7642211242640572229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8074735547342901238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8416514947c404446bc7b2f755ec11eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
