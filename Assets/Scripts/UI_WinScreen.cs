@@ -48,10 +48,11 @@ public class UI_WinScreen : MonoBehaviour
         //AdsManager.ShowRewarded("ad_reward_claim",AdSucess,AdFail);
         ADSuccess();
     }
+    float currentRewardMultiplier = 1;
     public void ADSuccess()
     {
         claimClicked = true;
-        LevelManager.Instance.SetCurrentMultiplier(PingPong.GetCurrentMultiplier());
+        currentRewardMultiplier = (PingPong.GetCurrentMultiplier());
         StartCoroutine(SwitchScreenCor());
     }
     public void ADFail()
@@ -66,6 +67,7 @@ public class UI_WinScreen : MonoBehaviour
         }
         claimClicked = true;
         StartCoroutine(SwitchScreenCor());
+        //give money
     }
     public void NextLevelClick()
     {

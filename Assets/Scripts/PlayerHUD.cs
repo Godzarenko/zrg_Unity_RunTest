@@ -18,6 +18,7 @@ public class PlayerHUD : MonoBehaviour
         LevelManager.Instance.OnXPChanged.AddListener(OnXPChanged);
         LevelManager.Instance.OnGameStarted.AddListener(GameStarted);
         LevelManager.Instance.OnGameEnded.AddListener(GameEnded);
+        LevelManager.Instance.OnGameContinue.AddListener(GameContinue);
     }
     private void Update()
     {
@@ -69,6 +70,11 @@ public class PlayerHUD : MonoBehaviour
     void GameEnded(bool win, int winlevel)
     {
         gameObject.SetActive(false);
+    }
+
+    void GameContinue()
+    {
+        gameObject.SetActive(true);
     }
     [Serializable]
     public struct PlayerHUDLevelStruct

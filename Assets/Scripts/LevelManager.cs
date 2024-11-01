@@ -16,6 +16,11 @@ public class LevelManager : MonoBehaviour
             return _instance;
         }
     }
+    
+    [SerializeField] string WinScreenSound;
+    [SerializeField] string FailSound;
+    [SerializeField] string StartSound;
+
 
     public bool IsGameOngoing()
     {
@@ -29,6 +34,7 @@ public class LevelManager : MonoBehaviour
             PlayerController.Instance.StartGame();
             OnGameStarted?.Invoke();
             gameOngoing = true;
+            SoundsManager.CreateSoundOnCamera(StartSound, 4, true);
         }
     }
 
@@ -38,6 +44,14 @@ public class LevelManager : MonoBehaviour
         {
             gameOngoing = false;
             OnGameEnded?.Invoke(win, winLevel);
+            if (win)
+            {
+                SoundsManager.CreateSoundOnCamera(WinScreenSound, 4, true);
+            }
+            else
+            {
+                SoundsManager.CreateSoundOnCamera(FailSound, 4, true);
+            }
         }
     }
 
@@ -53,6 +67,7 @@ public class LevelManager : MonoBehaviour
     }
     public void ContinueGame()
     {
+        SoundsManager.CreateSoundOnCamera(StartSound, 4, true);
         gameOngoing = true;
         OnGameContinue?.Invoke();
     }

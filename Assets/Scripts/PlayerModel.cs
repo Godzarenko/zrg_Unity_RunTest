@@ -10,17 +10,25 @@ public class PlayerModel : MonoBehaviour
     private void Awake()
     {
         LevelManager.Instance.OnLevelChanged.AddListener(LevelChanged);
+        LevelManager.Instance.OnGameEnded.AddListener(GameEnded);
+        LevelManager.Instance.OnGameContinue.AddListener(GameContinued);
+        LevelManager.Instance.OnGameStarted.AddListener(GameStarted);
     }
     private void Start()
     {
-        
+        for(int i = 0; i < Levels.Length; i++)
+        {
+            Levels[i].Anmtr.keepAnimatorStateOnDisable = true;
+        }
     }
     void GameStarted()
     {
-
+        gameOngoing = true;
+        Levels[lastLevel].Anmtr.SetBool("walk", true);
     }
     void GameEnded(bool win, int winlevel)
     {
+        gameOngoing = false;
         if (win)
         {
             Levels[lastLevel].Anmtr.SetBool("win", true);
@@ -29,6 +37,13 @@ public class PlayerModel : MonoBehaviour
         {
             Levels[lastLevel].Anmtr.SetBool("fail", true);
         }
+    }
+    void GameContinued()
+    {
+        gameOngoing = true;
+        Levels[lastLevel].Anmtr.SetBool("walk", true);
+        Levels[lastLevel].Anmtr.SetBool("win", false);
+        Levels[lastLevel].Anmtr.SetBool("fail", false);
     }
     void LevelChanged(int lvl)
     {

@@ -67,7 +67,10 @@ public class PlayerController : MonoBehaviour
             {
                 Tangent = fTangent;
                 Pos = fPos;
-
+                if (Tangent.sqrMagnitude == 0)
+                {
+                    Tangent = transform.forward;
+                }
                 transform.SetPositionAndRotation(
                     Pos,
                     Quaternion.LookRotation(Tangent, Up));
@@ -85,6 +88,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         LevelManager.Instance.OnGameContinue.AddListener(GameContinue);
+        LevelManager.Instance.OnGameEnded.AddListener(GameEnded);
     }
     private void Start()
     {
@@ -164,6 +168,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
+                prevClick = false;
                 _currentMoveMotion = Mathf.MoveTowards(_currentMoveMotion, 0, 15 * Time.deltaTime);
             }
             PlayerCaretAnimator.SetFloat("side", _currentMoveMotion);
@@ -258,7 +263,16 @@ public class PlayerController : MonoBehaviour
         LevelPlaying = true;
         PlayerCaretAnimator.SetBool("play", true);
         PlayerCaretAnimator.SetBool("fail", false);
+        PlayerCaretAnimator.SetBool("win", false);
         failImune = 3f;
+    }
+    public void GameEnded(bool win, int lvl)
+    {
+        LevelPlaying = false;
+        if (win)
+        {
+            PlayerCaretAnimator.SetBool("win", true);
+        }
     }
     public void StartGame()
     {

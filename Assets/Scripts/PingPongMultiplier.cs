@@ -11,19 +11,24 @@ public class PingPongMultiplier : MonoBehaviour
     bool run = true;
     float needleAng;
     [SerializeField] MultiplierSection[] Sections;
+    [SerializeField] bool DebugInEditor;
     [SerializeField] float Debug_Multiplier;
-    private void OnDrawGizmos()
+    
+    private void OnDrawGizmosSelected()
     {
-        needleAng = Needle.transform.localEulerAngles.z;
-        if (needleAng > 180)
+        if (DebugInEditor)
         {
-            needleAng -= 360;
+            needleAng = Needle.transform.localEulerAngles.z;
+            if (needleAng > 180)
+            {
+                needleAng -= 360;
+            }
+            if (needleAng < -180)
+            {
+                needleAng += 360;
+            }
+            Debug_Multiplier = GetCurrentMultiplier();
         }
-        if (needleAng < -180)
-        {
-            needleAng += 360;
-        }
-        Debug_Multiplier = GetCurrentMultiplier();
     }
     private void Start()
     {
@@ -63,7 +68,7 @@ public class PingPongMultiplier : MonoBehaviour
     }
     public void Continue()
     {
-        run = false;
+        run = true;
     }
     public float GetCurrentMultiplier()
     {
